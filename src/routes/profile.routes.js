@@ -9,6 +9,5 @@ const profileRoutes = Router();
 
 profileRoutes.post("/change-avatar", authMiddleware, changeAvatarController);
 profileRoutes.get("/info", authMiddleware, getInfoController);
-profileRoutes.post("/follow", authMiddleware, followUserController);
 
 export { profileRoutes };
