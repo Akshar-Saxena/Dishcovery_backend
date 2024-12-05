@@ -3,8 +3,8 @@ import { userModel } from "../models/user.model.js";
 
 async function loginController(req, res) {
     try {
-        const { email, password } = req.body;
-        const users = await userModel.find({ email });
+        const { user, email, password } = req.body;
+        const users = await userModel.find({ email, username: user });
         if (users.length > 0) {
             if (users[0].password === password) {
                 const access_token = generateToken({
